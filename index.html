@@ -3,33 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Henry Financial Consulting — San Antonio</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>AmeriBooks — Bookkeeping for Small Businesses</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --green: #22c55e;
-    --green-dark: #15803d;
-    --green-light: #f0fdf4;
-    --dark: #0f172a;
-    --dark-2: #1e293b;
-    --muted: #64748b;
-    --light: #f8fafc;
-    --border: #e2e8f0;
+    --navy: #0d1b2a;
+    --navy-2: #1b2d42;
+    --red: #c1121f;
+    --red-light: #e63946;
+    --cream: #f8f4ef;
+    --cream-2: #efe9e1;
     --white: #ffffff;
+    --text: #0d1b2a;
+    --muted: #5c6b7a;
+    --border: #ddd5c8;
   }
 
+  html { scroll-behavior: smooth; }
+
   body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--light);
-    color: var(--dark);
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text);
     line-height: 1.6;
   }
 
+  /* NAV */
   nav {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
+    background: var(--navy);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -39,67 +42,100 @@
     z-index: 100;
   }
 
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-flag {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .nav-flag span {
+    display: block;
+    width: 22px;
+    height: 4px;
+    border-radius: 1px;
+  }
+
+  .nav-flag span:nth-child(1) { background: #B22234; }
+  .nav-flag span:nth-child(2) { background: #ffffff; }
+  .nav-flag span:nth-child(3) { background: #3C3B6E; }
+
   .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.2rem;
-    color: var(--dark);
-    letter-spacing: -0.3px;
-  }
-
-  .nav-logo span { color: var(--green-dark); }
-
-  .nav-cta {
-    background: var(--dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
     color: var(--white);
-    padding: 0.5rem 1.25rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: background 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--dark-2); }
-
-  .hero {
-    background: var(--dark);
-    color: var(--white);
-    padding: 5rem 2rem 4rem;
-    text-align: center;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: rgba(34, 197, 94, 0.15);
-    color: var(--green);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.35rem 1rem;
-    border-radius: 20px;
-    margin-bottom: 1.5rem;
     letter-spacing: 0.5px;
   }
 
+  .nav-logo span { color: #c1121f; }
+
+  .nav-cta {
+    background: var(--red);
+    color: var(--white);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--red-light); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #B22234 33%, #ffffff 33%, #ffffff 66%, #3C3B6E 66%);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #c1121f;
+    margin-bottom: 1.25rem;
+  }
+
   .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    line-height: 1.15;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 1.25rem;
     letter-spacing: -0.5px;
   }
 
   .hero h1 em {
-    font-style: normal;
-    color: var(--green);
+    font-style: italic;
+    color: #c1121f;
   }
 
   .hero p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #94a3b8;
-    max-width: 520px;
+    max-width: 500px;
     margin: 0 auto 2.5rem;
     font-weight: 300;
+    line-height: 1.75;
   }
 
   .hero-actions {
@@ -110,284 +146,497 @@
   }
 
   .btn-primary {
-    background: var(--green);
-    color: var(--dark);
-    padding: 0.85rem 2rem;
-    border-radius: 8px;
+    background: var(--red);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
     transition: background 0.2s, transform 0.1s;
+    letter-spacing: 0.2px;
   }
 
-  .btn-primary:hover { background: #16a34a; transform: translateY(-1px); }
+  .btn-primary:hover { background: var(--red-light); transform: translateY(-1px); }
 
   .btn-secondary {
     background: transparent;
     color: var(--white);
-    border: 1px solid #334155;
-    padding: 0.85rem 2rem;
-    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: 400;
     font-size: 0.95rem;
     transition: border-color 0.2s;
   }
 
-  .btn-secondary:hover { border-color: #64748b; }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.5); }
 
-  .stats {
-    background: var(--dark-2);
-    border-top: 1px solid #1e293b;
-    padding: 2rem;
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--navy-2);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1.5rem 2rem;
     display: flex;
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
   }
 
-  .stat { text-align: center; }
-  .stat-number { font-family: 'DM Serif Display', serif; font-size: 1.75rem; color: var(--green); }
-  .stat-label { font-size: 0.8rem; color: #64748b; margin-top: 2px; }
+  .trust-item {
+    text-align: center;
+    color: var(--white);
+  }
 
-  section { padding: 4rem 2rem; max-width: 760px; margin: 0 auto; }
-
-  .section-label {
+  .trust-item-label {
     font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--green-dark);
+    color: #64748b;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .trust-item-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4.5rem 2rem;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
     margin-bottom: 0.75rem;
+    display: block;
   }
 
   h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.6rem, 4vw, 2.25rem);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
     letter-spacing: -0.3px;
   }
 
-  .intro-text {
+  .section-intro {
     font-size: 1.05rem;
     color: var(--muted);
     font-weight: 300;
-    margin-bottom: 2.5rem;
-    line-height: 1.75;
+    line-height: 1.8;
+    margin-bottom: 3rem;
   }
 
+  /* SERVICES */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   .service-card {
     background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: border-color 0.2s, transform 0.2s;
+    padding: 1.75rem;
+    transition: background 0.2s;
   }
 
-  .service-card:hover { border-color: var(--green); transform: translateY(-2px); }
+  .service-card:hover { background: #faf7f4; }
 
-  .service-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--green-light);
+  .service-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    color: var(--red);
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .service-price {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--red);
+    margin-top: 0.75rem;
+    display: block;
+  }
+
+  /* PRICING */
+  .pricing-section {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .pricing-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4.5rem 2rem;
+  }
+
+  .pricing-inner .eyebrow { color: #c1121f; }
+  .pricing-inner h2 { color: var(--white); }
+  .pricing-inner .section-intro { color: #94a3b8; }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .pricing-card {
+    background: var(--navy-2);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
+    padding: 1.75rem;
+    transition: border-color 0.2s;
   }
 
-  .service-icon svg { width: 20px; height: 20px; stroke: var(--green-dark); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .pricing-card:hover { border-color: var(--red); }
 
-  .service-card h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
-  .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+  .pricing-card.featured {
+    border-color: var(--red);
+    position: relative;
+  }
 
-  .about-section { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .featured-tag {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
 
-  .about-inner { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: start; }
+  .pricing-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
 
-  @media (max-width: 560px) { .about-inner { grid-template-columns: 1fr; } }
+  .pricing-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .pricing-period {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .pricing-desc {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.6;
+  }
+
+  /* ABOUT */
+  .about-section {
+    background: var(--cream-2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4.5rem 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 560px) {
+    .about-inner { grid-template-columns: 1fr; }
+  }
 
   .about-avatar {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: var(--dark);
+    background: var(--navy);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.75rem;
-    color: var(--green);
+    color: var(--red);
     flex-shrink: 0;
+    border: 3px solid var(--border);
   }
 
-  .about-text p { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; font-weight: 300; }
+  .about-text p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
   .about-text p:last-child { margin-bottom: 0; }
 
-  .contact-section { background: var(--dark); color: var(--white); }
+  /* CONTACT */
+  .contact-section {
+    background: var(--navy);
+    color: var(--white);
+  }
 
-  .contact-inner { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+  .contact-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4.5rem 2rem;
+    text-align: center;
+  }
 
   .contact-inner h2 { color: var(--white); margin-bottom: 0.75rem; }
-  .contact-inner p { color: #94a3b8; font-weight: 300; margin-bottom: 2.5rem; }
+  .contact-inner > p { color: #94a3b8; font-weight: 300; margin-bottom: 2.5rem; }
 
-  .contact-cards { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+  .contact-cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
 
   .contact-card {
-    background: var(--dark-2);
-    border: 1px solid #1e293b;
-    border-radius: 10px;
-    padding: 1.25rem 1.75rem;
-    min-width: 200px;
+    background: var(--navy-2);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 1.25rem 2rem;
+    min-width: 220px;
+    text-align: left;
   }
 
-  .contact-card-label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
-  .contact-card-value { font-size: 1rem; font-weight: 500; color: var(--white); }
+  .contact-card-label {
+    font-size: 0.72rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
 
-  .free-note {
+  .contact-card-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .free-badge {
     display: inline-block;
-    background: rgba(34, 197, 94, 0.1);
-    color: var(--green);
-    border: 1px solid rgba(34, 197, 94, 0.2);
-    font-size: 0.85rem;
-    padding: 0.5rem 1.25rem;
-    border-radius: 20px;
+    border: 1px solid rgba(193,18,31,0.4);
+    color: #e63946;
+    font-size: 0.82rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
   }
 
+  /* FOOTER */
   footer {
-    background: #020617;
-    color: #475569;
+    background: #070f17;
+    color: #334155;
     text-align: center;
     padding: 1.5rem;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
   }
+
+  footer span { color: var(--red); }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">Henry <span>Financial</span> Consulting</div>
-  <a href="mailto:engarue07@gmail.com" class="nav-cta">Get in touch</a>
+  <div class="nav-brand">
+    <div class="nav-flag">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-logo">Ameri<span>Books</span></div>
+  </div>
+  <a href="mailto:ameribooksllc@ameribooksco.com" class="nav-cta">Get started</a>
 </nav>
 
 <div class="hero">
-  <div class="hero-badge">San Antonio, TX</div>
-  <h1>Your business deserves<br><em>smarter finances</em></h1>
-  <p>Finance degree expertise helping San Antonio small businesses budget better, price right, and grow with confidence.</p>
+  <p class="hero-eyebrow">San Antonio, Texas · Licensed LLC</p>
+  <h1>Your books, <em>finally</em><br>under control.</h1>
+  <p>Honest, reliable bookkeeping for small businesses and entrepreneurs who want clear numbers and more time to grow.</p>
   <div class="hero-actions">
-    <a href="mailto:engarue07@gmail.com" class="btn-primary">Free consultation</a>
-    <a href="tel:2105521940" class="btn-secondary">Call (210) 552-1940</a>
+    <a href="mailto:ameribooksllc@ameribooksco.com" class="btn-primary">Free consultation</a>
+    <a href="tel:+12106296291" class="btn-secondary">Call (210) 629-6291</a>
   </div>
 </div>
 
-<div class="stats">
-  <div class="stat">
-    <div class="stat-number">Free</div>
-    <div class="stat-label">First consultation</div>
+<div class="trust-bar">
+  <div class="trust-item">
+    <span class="trust-item-value">LLC</span>
+    <span class="trust-item-label">Registered in Texas</span>
   </div>
-  <div class="stat">
-    <div class="stat-number">Local</div>
-    <div class="stat-label">San Antonio based</div>
+  <div class="trust-item">
+    <span class="trust-item-value">QuickBooks</span>
+    <span class="trust-item-label">Certified advisor</span>
   </div>
-  <div class="stat">
-    <div class="stat-number">Affordable</div>
-    <div class="stat-label">Small business rates</div>
+  <div class="trust-item">
+    <span class="trust-item-value">Free</span>
+    <span class="trust-item-label">First consultation</span>
   </div>
 </div>
 
-<section>
-  <div class="section-label">What I do</div>
-  <h2>Services for small businesses</h2>
-  <p class="intro-text">Whether you run a restaurant, a shop, or any small business — I help you understand your numbers so you can make better decisions and keep more of what you earn.</p>
+<div class="section">
+  <span class="eyebrow">What we do</span>
+  <h2>Services built for small business</h2>
+  <p class="section-intro">Whether you're a contractor, a restaurant owner, or a solopreneur — we keep your finances organized so you can focus on what you do best.</p>
 
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-      </div>
-      <h3>Pricing strategy</h3>
-      <p>Make sure you're charging enough to actually be profitable — not just busy.</p>
+      <span class="service-number">01</span>
+      <h3>Monthly Bookkeeping</h3>
+      <p>Consistent, accurate records of every transaction so you always know where your business stands.</p>
+      <span class="service-price">$250 – $500 / month</span>
     </div>
     <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      </div>
-      <h3>Business financial analysis</h3>
-      <p>See where your money is really going and what to do about it.</p>
+      <span class="service-number">02</span>
+      <h3>Bookkeeping Cleanup</h3>
+      <p>Messy books from previous months or years? We sort through it all and get your records back on track.</p>
+      <span class="service-price">$300 – $1,500+</span>
     </div>
     <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M2 12h20M2 12l4-4M2 12l4 4M22 12l-4-4M22 12l-4 4"/></svg>
-      </div>
-      <h3>Cash flow planning</h3>
-      <p>Never be surprised by running out of money at the end of the month again.</p>
+      <span class="service-number">03</span>
+      <h3>QuickBooks Setup & Cleanup</h3>
+      <p>We set up your QuickBooks account correctly from the start, or clean up an existing one that's gotten out of hand.</p>
+      <span class="service-price">$150 – $500</span>
     </div>
     <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-      </div>
-      <h3>Bookkeeping & records</h3>
-      <p>Keep your financial records organized so tax time isn't a nightmare.</p>
+      <span class="service-number">04</span>
+      <h3>Account Reconciliation</h3>
+      <p>We match your records to your bank statements so nothing falls through the cracks at tax time.</p>
+      <span class="service-price">$100 – $300</span>
     </div>
     <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      </div>
-      <h3>Growth planning</h3>
-      <p>Thinking about expanding? Let's look at the numbers first and plan it right.</p>
+      <span class="service-number">05</span>
+      <h3>Financial Reporting</h3>
+      <p>Clear profit & loss statements, balance sheets, and cash flow reports — in plain language you can actually use.</p>
+      <span class="service-price">Included in monthly plans</span>
     </div>
     <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      </div>
-      <h3>Budget setup</h3>
-      <p>Build a realistic budget that actually works for your type of business.</p>
+      <span class="service-number">06</span>
+      <h3>Virtual Assistant Add-ons</h3>
+      <p>Need extra administrative support? We offer virtual assistant services to keep your business running smoothly.</p>
+      <span class="service-price">Custom pricing</span>
     </div>
   </div>
-</section>
+</div>
+
+<div class="pricing-section">
+  <div class="pricing-inner">
+    <span class="eyebrow">Pricing</span>
+    <h2>Simple, transparent rates</h2>
+    <p class="section-intro" style="margin-bottom: 2rem;">No surprises, no hidden fees. Pick what fits your business right now.</p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <span class="pricing-name">Starter</span>
+        <div class="pricing-price">$250</div>
+        <span class="pricing-period">per month</span>
+        <p class="pricing-desc">Monthly bookkeeping and basic reporting for small businesses with straightforward finances.</p>
+      </div>
+      <div class="pricing-card featured">
+        <span class="featured-tag">Most popular</span>
+        <span class="pricing-name">Growth</span>
+        <div class="pricing-price">$500</div>
+        <span class="pricing-period">per month</span>
+        <p class="pricing-desc">Full bookkeeping, reconciliation, and detailed reporting for growing businesses.</p>
+      </div>
+      <div class="pricing-card">
+        <span class="pricing-name">One-time</span>
+        <div class="pricing-price">Custom</div>
+        <span class="pricing-period">project rate</span>
+        <p class="pricing-desc">Cleanup, QuickBooks setup, or reconciliation projects priced based on scope.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="about-section">
   <div class="about-inner">
-    <div class="about-avatar">H</div>
+    <div class="about-avatar">SL</div>
     <div class="about-text">
-      <div class="section-label">About</div>
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Finance graduate, San Antonio local</h2>
-      <p>I have a bachelor's degree in finance and a genuine passion for helping small businesses succeed. I've studied business strategy, financial analysis, and decision making — and I want to put that to work for businesses right here in my community.</p>
-      <p>I offer affordable rates because I know small businesses in San Antonio work hard and deserve expert financial guidance without the big firm price tag. Your first consultation is always free.</p>
+      <span class="eyebrow">About</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1rem;">Sara Lopez, founder</h2>
+      <p>AmeriBooks was built on a simple belief — small business owners deserve honest, reliable financial help without the big firm price tag.</p>
+      <p>As a QuickBooks-certified bookkeeper based in San Antonio, I work with small businesses, contractors, and entrepreneurs who need their numbers organized so they can make better decisions and grow with confidence.</p>
+      <p>Your first consultation is free. No commitment, no pressure — just an honest conversation about your books.</p>
     </div>
   </div>
 </div>
 
 <div class="contact-section">
   <div class="contact-inner">
-    <div class="section-label" style="color: var(--green);">Contact</div>
-    <h2>Let's talk about your business</h2>
-    <p>Reach out by email or phone. First conversation is free, no commitment.</p>
+    <span class="eyebrow" style="color: #c1121f;">Contact</span>
+    <h2>Let's get your books in order</h2>
+    <p>Reach out by email or phone. First consultation is always free.</p>
     <div class="contact-cards">
       <div class="contact-card">
-        <div class="contact-card-label">Email</div>
-        <div class="contact-card-value">engarue07@gmail.com</div>
+        <span class="contact-card-label">Email</span>
+        <span class="contact-card-value">ameribooksllc@ameribooksco.com</span>
       </div>
       <div class="contact-card">
-        <div class="contact-card-label">Phone / WhatsApp</div>
-        <div class="contact-card-value">(210) 552-1940</div>
+        <span class="contact-card-label">Phone / WhatsApp</span>
+        <span class="contact-card-value">(210) 629-6291</span>
+      </div>
+      <div class="contact-card">
+        <span class="contact-card-label">Location</span>
+        <span class="contact-card-value">San Antonio, TX</span>
       </div>
     </div>
-    <span class="free-note">Free initial consultation — no commitment required</span>
+    <span class="free-badge">Free initial consultation — no commitment required</span>
   </div>
 </div>
 
 <footer>
-  &copy; 2026 Henry Financial Consulting — San Antonio, TX
+  &copy; 2026 <span>AmeriBooks LLC</span> — San Antonio, Texas. Honest bookkeeping for small businesses.
 </footer>
 
 </body>
